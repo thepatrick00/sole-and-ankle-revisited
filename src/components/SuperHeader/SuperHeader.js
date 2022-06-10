@@ -8,16 +8,17 @@ import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
 
 const SuperHeader = () => {
+
   return (
     <Wrapper>
       <MarketingMessage>
         Free shipping on domestic orders over $75!
       </MarketingMessage>
-      <SearchInput />
+      <SearchInputBar />
       <HelpLink href="/help">Help</HelpLink>
-      <UnstyledButton>
+      <ShoppingBagButton>
         <Icon id="shopping-bag" strokeWidth={1} />
-      </UnstyledButton>
+      </ShoppingBagButton>
     </Wrapper>
   );
 };
@@ -32,6 +33,10 @@ const Wrapper = styled.div`
   height: 40px;
   padding-left: 32px;
   padding-right: 32px;
+  
+  @media ${p => p.theme.queries.tabletAndSmaller} {
+    display: none;
+  }
 `;
 
 const MarketingMessage = styled.span`
@@ -46,7 +51,13 @@ const HelpLink = styled.a`
 
   &:not(:focus-visible) {
     outline: none;
-  }
+  };
+`;
+
+const ShoppingBagButton = styled(UnstyledButton)`
+`;
+
+const SearchInputBar = styled(SearchInput)`
 `;
 
 export default SuperHeader;

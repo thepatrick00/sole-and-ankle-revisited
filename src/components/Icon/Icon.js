@@ -16,7 +16,7 @@ const icons = {
   close: X,
 };
 
-const Icon = ({ id, color, size, strokeWidth, ...delegated }) => {
+function Icon({ id, color, size, strokeWidth, ...delegated }) {
   const Component = icons[id];
 
   if (!Component) {
